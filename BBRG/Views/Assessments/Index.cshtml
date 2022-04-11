@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BBRG.Models.Assessment>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>Assessments</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>-</th>
+            <th>-</th>
+
+            <th>-</th>
+
+            <th>-</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    Lorem Ipsum
+                </td>
+                <td>
+                    @Html.ActionLink("Assessment", "Detail", "Assessments")
+
+                </td>
+                <td>
+                    @Html.ActionLink("SavingPlan", "Detail", "SavingPlans")
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
