@@ -29,8 +29,9 @@ namespace BBRG.Models
         }
         public DbSet<Assessment> Assessments { get; set; }
         public DbSet<Region> Regions { get; set; }
-
         public DbSet<SavingPlan> SavingPlans { get; set; }
+        public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<SecurityType> SecurityTypes { get; set; }
 
         public static ApplicationDbContext Create()
         {

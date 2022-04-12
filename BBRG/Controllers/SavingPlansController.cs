@@ -60,12 +60,15 @@ namespace BBRG.Controllers
 
             string[] arr = RegionId.Split(',');
             List<Region> region = new List<Region>();
+            foreach (var item in arr)
+            {
 
+            }
 
             var assessment = new Assessment
             {
                 AssessmentUser = user,
-                RegionList=null
+                RegionList = null
             };
 
             _context.Assessments.Add(assessment);

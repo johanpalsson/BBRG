@@ -20,15 +20,22 @@ namespace BBRG.Controllers
         public ActionResult NewAssessment()
         {
             var regions = _context.Regions.ToList();
+            var secTypes = _context.SecurityTypes.ToList();
             var sp_ViewModel = new SavingPlanAssessmentView
             {
                 RegionLookUp = regions
+            };
+
+            var portfolioViewModel = new PortfolioViewModel
+            {
+                SecTypeLookUp = secTypes
             };
             var viewModel = new AssessmentViewModel
             {
                 Heading = "New Assessment",
                 RegionLookUp = regions,
-                SavingPlanViewwModel = sp_ViewModel
+                SavingPlanViewwModel = sp_ViewModel,
+                PortfolioViewModel = portfolioViewModel
 
             };
             return View(viewModel);

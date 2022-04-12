@@ -14,6 +14,7 @@ namespace BBRG.ViewModels
         public int Id { get; set; }
 
         public SavingPlanAssessmentView SavingPlanViewwModel { get; set; }
+        public PortfolioViewModel PortfolioViewModel { get; set; }
 
         public int RegionId { get; set; }
         [Required]
