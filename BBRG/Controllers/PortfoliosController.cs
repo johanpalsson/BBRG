@@ -54,9 +54,9 @@ namespace BBRG.Controllers
             var secTypes = _context.SecurityTypes.ToList();
             var portfolioViewModel = new PortfolioViewModel
             {
-                
+
                 SecTypeLookUp = secTypes,
-                SecurityTypeList = new List<SelectListItem>()
+                SecurityTypeList = new List<SecurityType>()
             };
 
             return View(portfolioViewModel);

@@ -1,6 +1,5 @@
 ﻿using BBRG.Models;
 using System.Collections.Generic;
-using System.Web.Mvc;
 
 namespace BBRG.ViewModels
 {
@@ -8,13 +7,13 @@ namespace BBRG.ViewModels
     {
         public PortfolioViewModel()
         {
-            SecurityTypeList = new List<SelectListItem>();
+            SecurityTypeList = new List<SecurityType>();
         }
 
         public int Id { get; set; }
         public int SecTypeId { get; set; }
 
-        public IList<SelectListItem> SecurityTypeList { get; set; }
+        public List<SecurityType> SecurityTypeList { get; set; }
         public IEnumerable<SecurityType> SecTypeLookUp { get; set; }
         public string Heading { get; set; }
 
