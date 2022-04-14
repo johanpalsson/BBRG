@@ -114,6 +114,24 @@ namespace BBRG.Controllers
             };
             return View("NewSavingPlan", viewModel);
         }
+        [HttpPost]
+        public ActionResult Save(SavingPlan viewModel)
+        {
+            var userId = User.Identity.GetUserId();
+            var user = _context.Users.Single(u => u.Id == userId);
+
+            var savingPlan = new SavingPlan
+            {
+                AssessmentUser = user,
+                RegionList = viewModel.RegionList
+
+            };
+
+            _context.SavingPlans.Add(savingPlan);
+            _context.SaveChanges();
+
+            return RedirectToAction("Detail", savingPlan);
+        }
 
 
         //[Authorize]

@@ -33,6 +33,7 @@ namespace BBRG.Models
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<SecurityType> SecurityTypes { get; set; }
 
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

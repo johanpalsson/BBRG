@@ -32,6 +32,7 @@ namespace BBRG.Controllers
         public ActionResult Detail(int id)
         {
             var portfolio = _context.Portfolios
+                .Include(m => m.SecuritiesTypes)
                 .SingleOrDefault(m => m.PortfolioId == id);
 
             if (portfolio == null)
@@ -69,18 +70,14 @@ namespace BBRG.Controllers
             var userId = User.Identity.GetUserId();
             var user = _context.Users.Single(u => u.Id == userId);
 
-            //foreach (var item in viewModel.SecurityTypeList)
-            //{
-            //    Debug.WriteLine("Name: " + item.SecTypeName);
-
-            //}
-
             var portfolio = new Portfolio
             {
                 AssessmentUser = user,
+                SecuritiesTypes = viewModel.SecurityTypeList
 
             };
 
+            _context.Portfolios.Add(portfolio);
             _context.SaveChanges();
 
             return RedirectToAction("Detail", portfolio);

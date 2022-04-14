@@ -9,19 +9,19 @@ namespace BBRG.ViewModels
 
         public SavingPlanAssessmentView()
         {
-            Region = new Region();
+            RegionList = new List<Region>();
         }
 
-        public SavingPlan SavingPlan { get; set; }
         public int Id { get; set; }
+
+        public SavingPlan SavingPlan { get; set; }
+
 
         public int RegionId { get; set; }
         public Region Region { get; set; }
         [Required]
-        public string[] RegionList { get; set; }
+        public List<Region> RegionList { get; set; }
         public IEnumerable<Region> RegionLookUp { get; set; }
-
-
         public string Heading { get; set; }
     }
 }

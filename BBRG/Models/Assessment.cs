@@ -12,6 +12,19 @@ namespace BBRG.Models
         public Region Region { get; set; }
         public List<Region> RegionList { get; set; }
 
+        public int SecurityTypeId { get; set; }
+        public SecurityType SecurityType { get; set; }
+        public List<SecurityType> SecurityTypeList { get; set; }
+
+        public int SavingPlanId { get; set; }
         public SavingPlan SavingPlan { get; set; }
+        public List<SavingPlan> SavingPlanList { get; set; }
+
+        public int PortfolioId { get; set; }
+        public Portfolio Portfolio { get; set; }
+        public List<Portfolio> PortfolioList { get; set; }
+
+
+
     }
 }

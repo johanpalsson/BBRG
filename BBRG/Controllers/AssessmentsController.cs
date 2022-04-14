@@ -66,24 +66,22 @@ namespace BBRG.Controllers
         [HttpPost]
         public ActionResult Save(AssessmentViewModel viewModel)
         {
-            //var userId = User.Identity.GetUserId();
+            var userid = User.Identity.GetUserId();
 
-            //var user = _context.Users.Single(u => u.Id == userId);
+            var user = _context.Users.Single(u => u.Id == userid);
 
-            //string[] regions = viewModel.RegionList;
 
-            //var assessment = new Assessment
-            //{
-            //    AssessmentUser = user,
-            //    RegionList = regions
+            var assessment = new Assessment
+            {
+                SavingPlan = viewModel.SavingPlanViewwModel.SavingPlan,
+                Portfolio = viewModel.PortfolioViewModel.Portfolio
 
-            //};
+            };
 
-            //_context.Assessments.Add(assessment);
-            //_context.SaveChanges();
+            _context.Assessments.Add(assessment);
+            _context.SaveChanges();
 
-            //return RedirectToAction("Detail", "assessments");
-            return null;
+            return RedirectToAction("Detail", "assessments");
         }
 
         [Authorize]

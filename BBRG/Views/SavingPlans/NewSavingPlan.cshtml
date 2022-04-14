@@ -2,66 +2,55 @@
 
 
 <h2>@Model.Heading</h2>
-@*@using (Html.BeginForm("Save", "Assessments", FormMethod.Post))
-    {*@
-@*@Html.AntiForgeryToken()
-    @Html.HiddenFor(m => m.Id)*@
 
+@using (Html.BeginForm("Save", "SavingPlans", FormMethod.Post))
+{
 
-<legend>Saving Plan</legend>
-<table id="regionTable" class="table table-striped">
-    <thead>
-        <tr>
-            <td>Region</td>
-            <td> <button id="add" type="button" class="btn btn-link">Add</button></td>
-            <td></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr id="regionRow_1">
-            <td>
-                @Html.DropDownListFor(m => m.RegionId, new SelectList(Model.RegionLookUp, "Id", "Name"), "Select Region", new { @class = "form-control Region", id = "Region_1", type = "string", name = "Region", selected = "false" })
-            </td>
-            <td>
-                <button data-region-id="@Model.RegionId" id="deleteRegion" type="button" class="btn btnDeleteRegion btn-link btn-xs btn" btn-xs>remove</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<hr />
-
-<p>
-
-    @Html.HiddenFor(m => m.Id)
-    <button data-saving-id="@User.Identity" onclick="saveRegion()" @*type="submit"*@ calss="btn btn-default js-toggle-save">Save</button>
-
-</p>
+    <legend>Saving Plan</legend>
+    <table id="regionTable" class="table table-striped">
+        <thead>
+            <tr>
+                <td>Region</td>
+                <td> <button id="add" type="button" class="btn btn-link">Add</button></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="regionRow_1">
+                <td>
+                    @Html.DropDownListFor(m => m.RegionList[0].Id, new SelectList(Model.RegionLookUp, "Id", "Name"), "Select Region",
+                    new { @class = "form-control Region", id = "Region" })
+                </td>
+                <td>
+                    <button data-region-id="@Model.RegionId" id="deleteRegion" type="button"
+                            class="btn btnDeleteRegion btn-link btn-xs btn" btn-xs>
+                        remove
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
 
 
 
+    <div>
+        @Html.HiddenFor(m => m.Id)
+        <button data-assess-id="@User.Identity" type="submit" calss="btn btn-default js-toggle-save">Save</button>
 
+    </div>
+
+
+}
 
 @section scripts
     {
     <script src="~/Scripts/SavingPlanScripts.js"></script>
-    <script>
+    @*<script>
         var saveRegion = (function () {
             var array = [];
             var commaSeperated = "";
             var count = 1;
-
-            //$("#regionTable tbody .Region").each(function (index, val) {
-            //    var regionId = $(val).attr("Id");
-            //    var arr = regionId.split('_');
-            //    var indexValue = $("#Region_"+count+" :selected").text();
-            //    var currentRegionId = arr[1];
-
-            //    var isSelected = $(".Region option").is(':selected', true);
-            //    if (isSelected) {
-            //        array.push([currentRegionId, indexValue]);
-            //    }
-            //    count++;
-            //});
 
             $("#regionTable tbody .Region").each(function (index, val) {
                 var indexValue = $("#Region_" + count + " :selected").text();
@@ -91,13 +80,18 @@
                 });
             };
         });
+    </script>*@
+
+
+    <script>
+   
+
     </script>
 }
 
 
 
 
-//  var indexValue = $("#Region_1:selected").val();
 
 
 

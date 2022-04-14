@@ -35,9 +35,6 @@
 
     <div class="card" style="width:auto;border:1px solid#e3e3e3 ">
         <div class="card-body">
-
-
-
             <table id="SecTypeTable" class="table table-striped">
                 <thead>
                     <tr>
@@ -48,27 +45,22 @@
                 </thead>
                 <tbody>
                     <tr id="SecTypeRow">
+
                         <td class="form-group">
-                            @Html.DropDownListFor(m => m.SecurityTypeList, new SelectList(Model.SecTypeLookUp, "Id", "SecTypeName"), "Select Sec Type", new { @class = "form-control SecType", id = "SecType_1", name = "SecType_1", selected = "false" })
+                            @Html.DropDownListFor(m => m.SecurityTypeList[0].Id, new SelectList(Model.SecTypeLookUp, "Id", "SecTypeName"),
+                           "Select Sec Type",  new { @class = "form-control SecType", id = "SecType", name = "SecType_1" })
                         </td>
                         <td>
-                            <button data-secType-id="@Model.SecTypeId" id="deleteSecType" type="button" class="btn btnDeleteSecType btn-link btn-xs btn" btn-xs>remove</button>
-                        </td>
-                    </tr>
-                    <tr id="SecTypeRow">
-                        <td class="form-group">
-                            @Html.DropDownListFor(m => m.SecurityTypeList, new SelectList(Model.SecTypeLookUp, "Id", "SecTypeName"), "Select Sec Type", new { @class = "form-control SecType", id = "SecType_2", name = "SecType_2", selected = "false" })
-                        </td>
-                        <td>
-                            <button data-secType-id="@Model.SecTypeId" id="deleteSecType" type="button" class="btn btnDeleteSecType btn-link btn-xs btn" btn-xs>remove</button>
+                            <button data-secType-id="@Model.SecTypeId" id="deleteSecType" type="button"
+                                    class="btn btnDeleteSecType btn-link btn-xs btn" btn-xs>
+                                remove
+                            </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
-
-
-            @Html.HiddenFor(m => m.Id)
-            <button data-assess-id="@User.Identity"   type="submit" calss="btn btn-default js-toggle-save">Save</button>
+            @*@Html.HiddenFor(m => m.Id)
+                <button data-assess-id="@User.Identity"   type="submit" calss="btn btn-default js-toggle-save">Save</button>*@
 
         </div>
     </div>
@@ -76,40 +68,5 @@
 
 @section scripts
     {
-    <script>
-
-      
-
-       $(document).on("click", ".btnDeleteSecType", function () {
-            var tableLength = $("table tr").length;
-            if (tableLength != 2) {
-                $(this).closest("tr").remove()
-            }
-        });
-
-        $(document).ready(function () {
-            var counter = 2;
-            $(function () {
-
-                $('#add').click(function () {
-                    $('<tr id="SecTypeRow_' + counter + '">'
-                        + '<td class="form-group">'
-                        + '<select type="text" asp-for="SecurityTypeList" name="SecType_'+counter+'" id="Region_' + counter + '" class="form-control Region" " >'
-                        + $(".SecType").html()
-                        + '</select>'
-                        + '</td>'
-                        + '<td>'
-                        + '<button data-secType-id= id="deleteSecType" type="button" class="btn btnDeleteSecType btn-link btn-xs btn" btn-xs>remove</button>'
-                        + '</td>'
-                        + '</tr>').appendTo('#SecTypeTable');
-                    counter++;
-                    return false;
-                });
-            });
-        });
-
-    </script>
-
+     <script src="~/Scripts/PortfolioScripts.js"></script>
 }
-
-      

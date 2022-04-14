@@ -261,6 +261,26 @@
     <Compile Include="Migrations\202204122132220_Updates9.designer.cs">
       <DependentUpon>202204122132220_Updates9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204131802063_Update1.cs" />
+    <Compile Include="Migrations\202204131802063_Update1.designer.cs">
+      <DependentUpon>202204131802063_Update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204131938354_Updates10.cs" />
+    <Compile Include="Migrations\202204131938354_Updates10.designer.cs">
+      <DependentUpon>202204131938354_Updates10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204131956531_AddAssessment.cs" />
+    <Compile Include="Migrations\202204131956531_AddAssessment.designer.cs">
+      <DependentUpon>202204131956531_AddAssessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204132002495_UpdatePortfolio.cs" />
+    <Compile Include="Migrations\202204132002495_UpdatePortfolio.designer.cs">
+      <DependentUpon>202204132002495_UpdatePortfolio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204141236247_updateAssessmentsController.cs" />
+    <Compile Include="Migrations\202204141236247_updateAssessmentsController.designer.cs">
+      <DependentUpon>202204141236247_updateAssessmentsController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assessment.cs" />
@@ -417,6 +437,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204122132220_Updates9.resx">
       <DependentUpon>202204122132220_Updates9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204131802063_Update1.resx">
+      <DependentUpon>202204131802063_Update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204131938354_Updates10.resx">
+      <DependentUpon>202204131938354_Updates10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204131956531_AddAssessment.resx">
+      <DependentUpon>202204131956531_AddAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204132002495_UpdatePortfolio.resx">
+      <DependentUpon>202204132002495_UpdatePortfolio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204141236247_updateAssessmentsController.resx">
+      <DependentUpon>202204141236247_updateAssessmentsController.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

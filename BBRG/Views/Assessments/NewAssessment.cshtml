@@ -6,114 +6,34 @@
 }
 
 <h2>@Model.Heading</h2>
+@using (Html.BeginForm("Save", "Assessments", FormMethod.Post))
+{
+
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+
+    <legend>Test</legend>
+
+    @Html.Partial("~/Views/SavingPlans/NewSavingPlan.cshtml", Model.SavingPlanViewwModel)
+
+    @Html.Partial("~/Views/Portfolios/NewPortfolio.cshtml", Model.PortfolioViewModel)
 
 
-@Html.AntiForgeryToken()
-@Html.HiddenFor(m => m.Id)
+    <div>
+    @Html.HiddenFor(m => m.Id)
+    <button data-assess-id="@User.Identity" type="submit" calss="btn btn-default js-toggle-save">Save</button>
 
-<legend>Test</legend>
+    </div>
 
-@Html.Partial("~/Views/SavingPlans/NewSavingPlan.cshtml", Model.SavingPlanViewwModel)
-
-@Html.Partial("~/Views/Portfolios/NewPortfolio.cshtml", Model.PortfolioViewModel)
-
-
-
-
-
-
+}
 
 @*@Scripts.Render("~/bundles/bootstrap.js")
     @Scripts.Render("~/bundles/jquery.js")*@
 
 
-@section Scripts {
+@*@section Scripts {
     <script src="~/Scripts/SavingPlanScripts.js"></script>
     <script src="~/Scripts/PortfolioScripts.js"></script>
 
-    <script>
-
-                                //$(document).ready(function () {
-                                //    $(".js-save").click(function (e) {
-                                //        var button = $(e.taget);
-                                //        $.post("/home/assessments", { "": button.attr("data-assess-id") })
-
-                                //            .fail(function () {
-                                //                alert("Something went wrong");
-                                //            });
-                                //    });
-                                //});
-
-
-
-
-                                        //$(document).ready(function () {
-                                        //    $(".js-save").click(function () {
-
-
-                                        //        var reg = new Array();
-                                        //        $("#regionTable tbody tr").each(function () {
-                                        //            var row = $(this);
-                                        //            var region = $(this).data("#region");
-
-                                        //            reg.push(region);
-                                        //        });
-                                        //        console.log(reg);
-
-                                        //        $.ajax({
-                                        //            type: "POST",
-                                        //            url: "/Home/assessments",
-                                        //            data: JSON.stringify(reg),
-                                        //            contentType: "application/json; charset=utf-8",
-                                        //            dataType: "json",
-                                        //            success: function (r) {
-                                        //                alert(r + " record(s) inserted.");
-                                        //            }
-
-                                        //        });
-                                        //    });
-                                        //});
-
-
-
-                                        //var counter = 1;
-                                        //$(function () {
-                                        //    $('#add').click(function () {
-                                        //        $('<tr id="tablerow' + counter + '">'
-                                        //            + '<td>'
-                                        //            + '<select name ="Region" class="form-control Region" name="Region[' + counter + ']" >'
-                                        //            + $("#Region").html()
-                                        //            + '</select>'
-                                        //            + '</td>'
-                                        //            + '<td>'
-                                        //            + '</td>'
-                                        //            + '<td>'
-                                        //            + '</td>'
-                                        //            + '<td>'
-                                        //            + '</td>'
-                                        //            + '<td>'
-                                        //            + '<button type="button" class="btn btn-link" onclick="removeTr(' + counter + ');">remove</button>'
-                                        //            + '</td>'
-                                        //            + '</tr>').appendTo('#regionTable');
-                                        //        counter++;
-                                        //        return false;
-                                        //    });
-                                        //});
-
-
-
-
-
-                                        //function removeTr(index) {
-                                        //    if (counter > 1) {
-                                        //        $('#tablerow' + index).remove();
-                                        //        counter--;
-                                        //    }
-                                        //    return false;
-                                        //}
-
-
-
-
-    </script>
-}
+   
+}*@
